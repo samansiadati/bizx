@@ -5,8 +5,8 @@
 [![PyPI](https://img.shields.io/pypi/v/bizx.svg)](https://pypi.org/project/bizx/)
 [![Python](https://img.shields.io/pypi/pyversions/bizx.svg)](https://pypi.org/project/bizx/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/bizx.svg)](https://github.com/YOUR_USERNAME/bizx/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/YOUR_USERNAME/bizx.svg)](https://github.com/YOUR_USERNAME/bizx/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/samansiadati/bizx.svg)](https://github.com/samansiadati/bizx/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/samansiadati/bizx.svg)](https://github.com/samansiadati/bizx/issues)
 
 ---
 
@@ -506,7 +506,7 @@ The objective is to provide a reliable foundation for building production-orient
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/bizx.git
+git clone https://github.com/samansiadati/bizx.git
 cd bizx
 ```
 
