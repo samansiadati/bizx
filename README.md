@@ -1,6 +1,6 @@
 # BizX
 
-### The Python ecosystem for Data Engineering, Artificial Intelligence, Generative AI, MLOps, and Cloud-Native Analytics.
+### The ecosystem for Data Engineering, Artificial Intelligence, Generative AI, MLOps, and Cloud-Native Engineering.
 
 [![PyPI](https://img.shields.io/pypi/v/bizx.svg)](https://pypi.org/project/bizx/)
 [![Python](https://img.shields.io/pypi/pyversions/bizx.svg)](https://pypi.org/project/bizx/)
@@ -12,252 +12,374 @@
 
 ## 🚀 What is BizX?
 
-**BizX** is an open-source Python ecosystem designed to provide a unified foundation for modern **Data, AI, and Cloud Engineering**.
+**BizX** is an open-source ecosystem designed to bring modern **Data Engineering and Artificial Intelligence** capabilities together under a unified architecture.
 
-The project brings commonly used capabilities across data engineering, machine learning, generative AI, MLOps, evaluation, observability, and cloud platforms into a consistent and modular Python ecosystem.
+BizX provides a modular foundation for building, integrating, and operating modern data and AI systems.
 
-The vision is simple:
+The ecosystem covers areas such as:
 
-> **Build a unified, composable, production-oriented ecosystem for Data and AI engineering with Python.**
+* Data Engineering
+* Data Processing
+* Data Quality
+* Machine Learning
+* Deep Learning
+* Generative AI
+* Large Language Models
+* RAG
+* AI Agents
+* AI Evaluation
+* MLOps
+* AI Observability
+* Cloud AI
+* Cloud Data Engineering
 
-BizX is designed to grow from a lightweight Python foundation into a broader ecosystem of reusable components for developers, data engineers, AI engineers, researchers, and organizations.
+The current implementation is written in **Python**.
+
+The longer-term vision is to evolve BizX beyond a single-language library into an ecosystem that can organize Data and AI capabilities across multiple programming languages and technology stacks.
+
+> **Or, even better, at the ecosystem level:**
+>
+> **BizX — one ecosystem for Data and AI Engineering.**
 
 ---
 
-## 🌐 The BizX Ecosystem
+# 🌐 The BizX Ecosystem
+
+BizX is organized around two primary engineering domains:
 
 ```text
-                                ┌─────────────────────┐
-                                │        BIZX         │
-                                │  Data & AI Platform │
-                                └──────────┬──────────┘
-                                           │
-             ┌─────────────────────────────┼─────────────────────────────┐
-             │                             │                             │
-             ▼                             ▼                             ▼
-      ┌──────────────┐             ┌──────────────┐             ┌──────────────┐
-      │     DATA     │             │      AI      │             │    CLOUD     │
-      └──────┬───────┘             └──────┬───────┘             └──────┬───────┘
-             │                            │                            │
-       ┌─────┼─────┐              ┌──────┼──────┐              ┌──────┼──────┐
-       │     │     │              │      │      │              │      │      │
-      SQL   ETL   Spark           ML     LLM    RAG            AWS   Azure  Databricks
-       │     │     │              │      │      │              │
-       └─────┼─────┘              │   Agents    │           Bedrock
-             │                    │   Eval      │           Glue
-             │                    │             │           S3
-             │                    └──────┬──────┘
-             │                           │
-             └───────────────────────────┼──────────────────────────────┐
-                                         ▼                              │
-                                  ┌──────────────┐                       │
-                                  │    MLOps     │                       │
-                                  └──────┬───────┘                       │
-                                         │                              │
-                              ┌──────────┼──────────┐                   │
-                              │          │          │                   │
-                            Train     Deploy     Monitor                │
-                              │          │          │                   │
-                              └──────────┼──────────┘                   │
-                                         ▼                              │
-                                Evaluation & Observability ◄───────────┘
+                              BIZX
+                               │
+                  Data & AI Engineering Ecosystem
+                               │
+                 ┌─────────────┴─────────────┐
+                 │                           │
+                 ▼                           ▼
+        ┌─────────────────┐         ┌─────────────────┐
+        │       DE        │         │       AI        │
+        │ Data Engineering│         │ Artificial Intel│
+        └────────┬────────┘         └────────┬────────┘
+                 │                           │
+       ┌─────────┼──────────┐       ┌────────┼──────────┐
+       │         │          │       │        │          │
+       ▼         ▼          ▼       ▼        ▼          ▼
+    DataFrame   ETL       Spark     ML      GenAI      LLM
+       │         │          │       │        │          │
+       ▼         ▼          ▼       ▼        ▼          ▼
+    Quality    SQL       Cloud     DL       RAG       Agents
+       │                    │       │        │          │
+       │                    ▼       ▼        ▼          ▼
+       │                   AWS   Evaluation MLOps  Observability
+       │
+       └───────────────────────────────────────────────────
 ```
 
----
+The architectural principle is simple:
 
-# ✨ Key Areas
-
-BizX is organized into modular domains.
-
-### 📊 Data Engineering
-
-Tools for building reliable data pipelines and working with structured and unstructured data.
-
-Planned capabilities include:
-
-* DataFrames
-* Data validation
-* Data profiling
-* Data quality
-* ETL / ELT
-* SQL utilities
-* Data transformation
-* Data serialization
-* Distributed data processing
-* Apache Spark / PySpark integrations
-
-```python
-from bizx.data import DataProfiler
-
-profile = DataProfiler(df)
-report = profile.generate()
+```text
+                        BizX
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+             DE                     AI
+              │                     │
+       Data Engineering       Artificial Intelligence
+              │                     │
+      ┌───────┼───────┐     ┌───────┼──────────────┐
+      │       │       │     │       │              │
+    Data     ETL    Spark   ML     GenAI          LLM
+    SQL     Quality Cloud   DL      RAG          Agents
+                              │       │              │
+                              └───────┼──────────────┘
+                                      │
+                              Evaluation / MLOps
+                                      │
+                               Observability
 ```
-
----
-
-### 🤖 Artificial Intelligence & Machine Learning
-
-Reusable components for traditional machine learning and AI workflows.
-
-Planned capabilities include:
-
-* Model utilities
-* Training pipelines
-* Feature engineering
-* Model evaluation
-* Experiment management
-* Prediction utilities
-* AI pipelines
-
-```python
-from bizx.ai import ModelEvaluator
-
-result = ModelEvaluator.evaluate(
-    model=model,
-    dataset=test_data
-)
-```
-
----
-
-### 🧠 Generative AI & LLMs
-
-BizX will provide a unified foundation for modern generative AI applications.
-
-Planned capabilities include:
-
-* LLM clients
-* Prompt management
-* Embeddings
-* Vector search
-* RAG
-* AI agents
-* LLM evaluation
-* Hallucination detection
-* Context management
-* AI safety and governance
-
-```python
-from bizx.llm import LLMClient
-
-llm = LLMClient(...)
-response = llm.generate(
-    "Explain the architecture of a modern data platform."
-)
-```
-
----
-
-### ⚙️ MLOps & AI Operations
-
-Production-oriented tooling for deploying, evaluating, monitoring, and maintaining AI systems.
-
-Planned capabilities include:
-
-* Experiment tracking
-* Model monitoring
-* Data drift detection
-* Model drift detection
-* LLM evaluation
-* AI observability
-* Pipeline monitoring
-* Performance monitoring
-* Production diagnostics
-
----
-
-### ☁️ Cloud Integrations
-
-BizX is designed to integrate with major cloud and data platforms without making the core framework dependent on a specific provider.
-
-Planned integrations include:
-
-#### AWS
-
-* Amazon Bedrock
-* Amazon S3
-* AWS Glue
-* Amazon OpenSearch
-* Amazon SageMaker
-* AWS Lambda
-* API Gateway
-
-#### Databricks
-
-* Databricks
-* Delta Lake
-* MLflow
-* Spark
-
-#### Other platforms
-
-Additional cloud and data-platform integrations may be added as the ecosystem develops.
 
 ---
 
 # 🏗️ Architecture
 
-BizX follows a modular architecture.
+The Python implementation follows a domain-oriented architecture.
 
 ```text
-bizx/
+src/bizx/
 │
-├── core/          # Foundational abstractions
+├── core/
 │
-├── data/          # Data engineering
+├── de/
+│   ├── cloud/
+│   │   └── aws/
+│   │       ├── glue/
+│   │       └── s3/
+│   │
+│   ├── dataframe/
+│   ├── etl/
+│   ├── profiling/
+│   ├── quality/
+│   ├── spark/
+│   └── sql/
 │
-├── ai/            # AI / ML
-│
-├── llm/           # Generative AI / LLMs
-│
-├── mlops/         # MLOps / AI operations
-│
-├── aws/           # AWS integrations
-│
-├── spark/         # Apache Spark integrations
-│
-└── utils/         # General-purpose utilities
+└── ai/
+    ├── agents/
+    ├── cloud/
+    │   └── aws/
+    │       ├── bedrock/
+    │       └── sagemaker/
+    │
+    ├── deep_learning/
+    ├── embeddings/
+    ├── evaluation/
+    ├── genai/
+    ├── llm/
+    ├── ml/
+    ├── mlops/
+    ├── observability/
+    └── rag/
 ```
 
-The architectural principle is:
+### `bizx.core`
+
+The foundational layer.
+
+It is intended to contain functionality shared across the ecosystem, such as:
+
+* Common abstractions
+* Configuration
+* Exceptions
+* Types
+* Interfaces
+* Shared utilities
+
+The core should remain lightweight and stable.
+
+---
+
+## 📊 `bizx.de` — Data Engineering
+
+The Data Engineering domain contains functionality for building reliable and scalable data systems.
+
+Planned areas include:
+
+* DataFrames
+* ETL / ELT
+* Data transformation
+* Data profiling
+* Data quality
+* Data validation
+* SQL
+* Apache Spark
+* PySpark
+* Distributed processing
+* Cloud data services
+* AWS Glue
+* Amazon S3
+* Future data platforms
+
+Example:
+
+```python
+from bizx.de import DataProfiler
+
+profiler = DataProfiler(df)
+
+report = profiler.generate()
+
+print(report)
+```
+
+---
+
+## 🤖 `bizx.ai` — Artificial Intelligence
+
+The AI domain contains capabilities for machine learning, generative AI, LLM applications, and production AI systems.
+
+Planned areas include:
+
+* Machine Learning
+* Deep Learning
+* Generative AI
+* Large Language Models
+* Embeddings
+* RAG
+* AI Agents
+* Model Evaluation
+* LLM Evaluation
+* MLOps
+* AI Observability
+* AI Safety and Governance
+* Cloud AI services
+
+---
+
+## 🧠 Generative AI & LLM
+
+Generative AI capabilities are organized inside the AI domain.
 
 ```text
-                    bizx.core
-                        │
-        ┌───────────────┼────────────────┐
-        │               │                │
-       data             ai              llm
-        │               │                │
-        └───────────────┼────────────────┘
-                        │
-                      mlops
-                        │
-                  Cloud Platforms
+bizx.ai
+│
+├── genai/
+├── llm/
+├── embeddings/
+├── rag/
+├── agents/
+├── evaluation/
+└── observability/
 ```
 
-The `core` layer should remain lightweight and stable.
+This provides a clear separation between general AI functionality and specialized GenAI capabilities.
 
-Domain-specific modules should build on the core rather than introducing unnecessary coupling between unrelated parts of the ecosystem.
+Planned functionality includes:
+
+* LLM interfaces
+* Prompt management
+* Prompt templates
+* Embeddings
+* Vector search
+* Retrieval-Augmented Generation
+* AI agents
+* Tool calling
+* Context management
+* LLM evaluation
+* Hallucination detection
+* AI safety
+* AI governance
+
+---
+
+# ☁️ Cloud Integration
+
+Cloud-specific capabilities belong inside the domain where they are primarily used.
+
+For example:
+
+```text
+bizx.de.cloud.aws.glue
+```
+
+is a Data Engineering capability, while:
+
+```text
+bizx.ai.cloud.aws.bedrock
+```
+
+is an AI capability.
+
+This keeps the architecture domain-oriented rather than creating a large independent collection of cloud-specific modules.
+
+```text
+                         BizX
+                           │
+                ┌──────────┴──────────┐
+                │                     │
+               DE                     AI
+                │                     │
+             Cloud                  Cloud
+                │                     │
+               AWS                   AWS
+                │                     │
+          ┌─────┴─────┐        ┌─────┴────────┐
+          │           │        │              │
+        Glue          S3     Bedrock       SageMaker
+```
+
+Future cloud providers can be added without changing the fundamental architecture.
+
+Potential integrations include:
+
+* AWS
+* Azure
+* Google Cloud
+* Databricks
+* Other cloud and data platforms
+
+---
+
+# 🌍 Ecosystem-Level Vision
+
+BizX currently provides a **Python implementation**.
+
+However, the long-term vision is broader.
+
+Modern Data and AI engineering is not limited to one programming language.
+
+The ecosystem may eventually contain implementations or integrations across:
+
+```text
+Python
+Java
+.NET
+JavaScript / TypeScript
+Go
+Scala
+Other ecosystems
+```
+
+Conceptually:
+
+```text
+                 Programming Languages
+                         │
+       ┌─────────────────┼─────────────────┐
+       │                 │                 │
+    Python             Java              .NET
+       │                 │                 │
+       └─────────────────┼─────────────────┘
+                         │
+                         ▼
+                       BizX
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+             DE                     AI
+              │                     │
+       Data Engineering       Artificial Intelligence
+              │                     │
+          Cloud / Data          Cloud / AI
+          Platforms             Platforms
+```
+
+This does **not** mean BizX currently supports these languages.
+
+The current project is focused on building a strong Python foundation first.
 
 ---
 
 # 🎯 Design Principles
 
-BizX is built around several principles.
+## 1. Domain-Oriented
 
-## Simple
+Technology should be organized according to the engineering domain it serves.
 
-Common Data and AI tasks should require minimal code.
+For example:
 
-## Modular
+```text
+AWS Glue → DE
+Amazon S3 → DE
+Apache Spark → DE
 
-Users should be able to install and use only the functionality they need.
+Amazon Bedrock → AI
+SageMaker → AI
+LLMs → AI
+RAG → AI
+Agents → AI
+```
+
+This makes the ecosystem easier to understand and extend.
+
+---
+
+## 2. Modular
+
+Users should be able to install only the capabilities they need.
 
 ```bash
 pip install bizx
 ```
 
-or:
+or install optional functionality:
 
 ```bash
 pip install "bizx[data]"
@@ -279,56 +401,108 @@ pip install "bizx[aws]"
 pip install "bizx[spark]"
 ```
 
----
+or install the complete ecosystem:
 
-## Composable
-
-Individual components should be usable independently and combined into larger workflows.
-
-```text
-Data → Transform → Validate → Model → Evaluate → Deploy → Monitor
+```bash
+pip install "bizx[all]"
 ```
 
 ---
 
-## Production-Oriented
+## 3. Composable
 
-BizX is intended to support real-world systems rather than only experimental notebooks.
+BizX components should be designed to work independently and together.
 
-Important concerns include:
+A typical production workflow may look like:
 
-* Testing
-* Logging
-* Configuration
-* Observability
-* Reproducibility
-* Error handling
-* Evaluation
-* Security
+```text
+Data
+  │
+  ▼
+Ingestion
+  │
+  ▼
+Transformation
+  │
+  ▼
+Validation
+  │
+  ▼
+Feature / Data Preparation
+  │
+  ▼
+ML / AI / GenAI
+  │
+  ▼
+Evaluation
+  │
+  ▼
+Deployment
+  │
+  ▼
+Monitoring
+  │
+  ▼
+Observability
+```
 
 ---
 
-## Cloud-Agnostic Core
+## 4. Cloud-Aware, Not Cloud-Locked
 
-The core BizX framework should not depend on a particular cloud provider.
+The core architecture should remain independent of any specific cloud provider.
 
-Cloud-specific functionality belongs in dedicated integration modules.
+Cloud integrations belong in dedicated modules.
 
 ```text
 bizx.core
     │
-    ├── bizx.aws
-    ├── bizx.databricks
-    └── future integrations
+    ├── bizx.de.cloud.aws
+    ├── bizx.ai.cloud.aws
+    ├── future Azure integrations
+    ├── future GCP integrations
+    └── future platform integrations
 ```
 
 ---
 
-## Open Source
+## 5. Production-Oriented
 
-BizX is designed to be developed openly and collaboratively.
+BizX is intended to support real-world Data and AI systems.
 
-Contributions, discussions, ideas, bug reports, and improvements are welcome.
+Important concerns include:
+
+* Testing
+* Configuration
+* Logging
+* Error handling
+* Observability
+* Reproducibility
+* Security
+* Evaluation
+* Monitoring
+* Scalability
+
+---
+
+## 6. Interoperability
+
+BizX is not intended to replace established technologies.
+
+Instead, it should provide useful abstractions and integrations around technologies such as:
+
+* Pandas
+* NumPy
+* Apache Spark
+* PySpark
+* scikit-learn
+* Hugging Face
+* AWS
+* Databricks
+* SQL systems
+* Vector databases
+* LLM providers
+* Cloud AI platforms
 
 ---
 
@@ -340,7 +514,7 @@ Contributions, discussions, ideas, bug reports, and improvements are welcome.
 pip install bizx
 ```
 
-## Data
+## Data Engineering
 
 ```bash
 pip install "bizx[data]"
@@ -352,7 +526,7 @@ pip install "bizx[data]"
 pip install "bizx[ai]"
 ```
 
-## Generative AI / LLM
+## LLM
 
 ```bash
 pip install "bizx[llm]"
@@ -376,9 +550,17 @@ pip install "bizx[spark]"
 pip install "bizx[all]"
 ```
 
+## Development
+
+```bash
+pip install "bizx[dev]"
+```
+
 ---
 
 # ⚡ Quick Start
+
+Check the installed version:
 
 ```python
 import bizx
@@ -386,10 +568,19 @@ import bizx
 print(bizx.__version__)
 ```
 
-Example data workflow:
+## Data Profiling
 
 ```python
-from bizx.data import DataProfiler
+import pandas as pd
+
+from bizx.de import DataProfiler
+
+df = pd.DataFrame(
+    {
+        "name": ["Alice", "Bob", "Charlie"],
+        "age": [25, 30, None],
+    }
+)
 
 profiler = DataProfiler(df)
 
@@ -398,110 +589,80 @@ report = profiler.generate()
 print(report)
 ```
 
-Example AI evaluation:
+Example result:
 
 ```python
-from bizx.ai import ModelEvaluator
-
-result = ModelEvaluator.evaluate(
-    model=model,
-    dataset=test_dataset
-)
-
-print(result)
+{
+    "rows": 3,
+    "columns": 2,
+    "missing_values": {
+        "name": 0,
+        "age": 1
+    },
+    "dtypes": {
+        "name": "object",
+        "age": "float64"
+    }
+}
 ```
 
-Example LLM workflow:
-
-```python
-from bizx.llm import LLMClient
-
-llm = LLMClient(...)
-
-response = llm.generate(
-    "What is retrieval-augmented generation?"
-)
-
-print(response)
-```
-
-> **Note:** APIs shown above represent the planned public interface and may change during the pre-1.0 development period.
+> **Note:** BizX is currently in Alpha development. APIs may evolve before the `1.0.0` release.
 
 ---
 
-# 🗺️ Roadmap
+# 📁 Project Structure
 
-BizX is being developed incrementally.
-
-## Phase 1 — Foundation
-
-* [ ] Core package architecture
-* [ ] Configuration
-* [ ] Common exceptions
-* [ ] Logging
-* [ ] Common types
-* [ ] Testing framework
-* [ ] CI/CD
-* [ ] Documentation system
-* [ ] PyPI packaging
-
-## Phase 2 — Data
-
-* [ ] Data utilities
-* [ ] Data validation
-* [ ] Data profiling
-* [ ] Data quality
-* [ ] Data transformation
-* [ ] SQL utilities
-* [ ] ETL/ELT utilities
-
-## Phase 3 — AI / ML
-
-* [ ] ML utilities
-* [ ] Model interfaces
-* [ ] Evaluation
-* [ ] Feature utilities
-* [ ] AI pipelines
-
-## Phase 4 — Generative AI
-
-* [ ] LLM interfaces
-* [ ] Prompt utilities
-* [ ] Embeddings
-* [ ] RAG
-* [ ] Vector search
-* [ ] Agent utilities
-* [ ] LLM evaluation
-
-## Phase 5 — MLOps
-
-* [ ] Experiment tracking
-* [ ] Model monitoring
-* [ ] Data drift
-* [ ] Model drift
-* [ ] AI observability
-* [ ] Production evaluation
-
-## Phase 6 — Cloud
-
-* [ ] AWS
-* [ ] Amazon Bedrock
-* [ ] Amazon S3
-* [ ] AWS Glue
-* [ ] Amazon SageMaker
-* [ ] Amazon OpenSearch
-* [ ] Databricks
-* [ ] Apache Spark
-
-## Phase 7 — BizX 1.0
-
-The `1.0.0` release will establish the first stable public API.
-
-The objective is to provide a reliable foundation for building production-oriented Data and AI applications with BizX.
-
+```text
+bizx/
+│
+├── docs/
+├── examples/
+├── tests/
+│
+├── src/
+│   └── bizx/
+│       │
+│       ├── __init__.py
+│       │
+│       ├── core/
+│       │
+│       ├── de/
+│       │   ├── __init__.py
+│       │   ├── cloud/
+│       │   │   └── aws/
+│       │   │       ├── glue/
+│       │   │       └── s3/
+│       │   ├── dataframe/
+│       │   ├── etl/
+│       │   ├── profiling/
+│       │   ├── quality/
+│       │   ├── spark/
+│       │   └── sql/
+│       │
+│       └── ai/
+│           ├── __init__.py
+│           ├── agents/
+│           ├── cloud/
+│           │   └── aws/
+│           │       ├── bedrock/
+│           │       └── sagemaker/
+│           ├── deep_learning/
+│           ├── embeddings/
+│           ├── evaluation/
+│           ├── genai/
+│           ├── llm/
+│           ├── ml/
+│           ├── mlops/
+│           ├── observability/
+│           └── rag/
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+└── pyproject.toml
+```
 
 ---
-
 
 # 🧪 Development
 
@@ -518,71 +679,164 @@ Create a virtual environment:
 python -m venv .venv
 ```
 
-Activate it:
-
-### Linux / macOS
+Activate it on Linux/macOS:
 
 ```bash
 source .venv/bin/activate
 ```
 
-### Windows
-
-```powershell
-.venv\Scripts\activate
-```
-
-Install the development dependencies:
+Install BizX in editable mode with development dependencies:
 
 ```bash
 pip install -e ".[dev]"
 ```
 
-Run tests:
+Run the test suite:
 
 ```bash
 pytest
 ```
 
----
+Build the distribution:
 
-# 🤝 Contributing
+```bash
+python -m build
+```
 
-Contributions are welcome.
+Validate the package:
 
-Before submitting a pull request:
-
-1. Create a feature branch.
-2. Add or update tests.
-3. Update documentation where appropriate.
-4. Ensure the test suite passes.
-5. Submit a pull request describing the change.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
+```bash
+python -m twine check dist/*
+```
 
 ---
 
-# 🔐 Security
+# 🗺️ Roadmap
 
-Security issues should not be reported through public GitHub issues.
+## Phase 1 — Foundation
 
-Please see [SECURITY.md](SECURITY.md) for information about responsible disclosure.
+* [x] Establish Python package
+* [x] Establish DE domain
+* [x] Establish AI domain
+* [x] PyPI packaging
+* [x] Basic Data Profiler
+* [x] Domain-oriented package structure
+* [ ] Common configuration
+* [ ] Common exceptions
+* [ ] Common types
+* [ ] Logging framework
+* [ ] CI/CD
+* [ ] Documentation system
+
+---
+
+## Phase 2 — Data Engineering
+
+* [ ] DataFrame utilities
+* [ ] Data profiling
+* [ ] Data validation
+* [ ] Data quality
+* [ ] ETL / ELT utilities
+* [ ] SQL utilities
+* [ ] Spark utilities
+* [ ] AWS Glue utilities
+* [ ] Amazon S3 utilities
+* [ ] Additional data-platform integrations
+
+---
+
+## Phase 3 — AI / ML
+
+* [ ] Machine learning utilities
+* [ ] Model interfaces
+* [ ] Training utilities
+* [ ] Feature engineering
+* [ ] Model evaluation
+* [ ] Deep learning utilities
+* [ ] AI pipelines
+
+---
+
+## Phase 4 — Generative AI
+
+* [ ] LLM interfaces
+* [ ] Prompt utilities
+* [ ] Embeddings
+* [ ] RAG
+* [ ] Vector search
+* [ ] AI agents
+* [ ] Tool calling
+* [ ] LLM evaluation
+* [ ] Hallucination detection
+
+---
+
+## Phase 5 — MLOps & AI Operations
+
+* [ ] Experiment tracking
+* [ ] Model monitoring
+* [ ] Data drift detection
+* [ ] Model drift detection
+* [ ] LLM monitoring
+* [ ] AI observability
+* [ ] Production evaluation
+* [ ] AI governance
+
+---
+
+## Phase 6 — Cloud
+
+* [ ] AWS
+* [ ] Amazon Bedrock
+* [ ] Amazon SageMaker
+* [ ] Amazon S3
+* [ ] AWS Glue
+* [ ] Amazon OpenSearch
+* [ ] AWS Lambda
+* [ ] API Gateway
+* [ ] Databricks
+* [ ] Azure integrations
+* [ ] Google Cloud integrations
+
+---
+
+## Phase 7 — Ecosystem Expansion
+
+The longer-term objective is to expand the BizX ecosystem beyond a single programming language.
+
+Potential ecosystems include:
+
+```text
+Python
+Java
+.NET
+JavaScript / TypeScript
+Go
+Scala
+...
+```
+
+The architecture will evolve carefully so that language-specific implementations can share common ecosystem concepts without forcing unrelated technologies into the same codebase.
 
 ---
 
 # 📚 Documentation
 
-Documentation will be developed alongside the project.
+Documentation will grow alongside the project.
 
-Planned documentation areas include:
+Planned areas include:
 
 * Getting Started
+* Installation
 * Core API
 * Data Engineering
 * AI / ML
 * Generative AI
 * LLMs
+* RAG
+* AI Agents
 * MLOps
+* Observability
 * Cloud Integrations
 * Examples
 * Architecture
@@ -590,51 +844,48 @@ Planned documentation areas include:
 
 ---
 
-# 📈 Project Status
+# 🤝 Contributing
 
-**Current status: Alpha / Early Development**
+Contributions, ideas, discussions, bug reports, and architectural proposals are welcome.
 
-BizX is under active development.
+Before submitting significant functionality, consider opening an issue to discuss the proposed design and how it fits within the BizX ecosystem.
 
-The API is expected to evolve before the `1.0.0` release.
+Typical contribution workflow:
 
-Early users and contributors are encouraged to provide feedback on architecture, APIs, documentation, and functionality.
+```bash
+git checkout -b feature/my-feature
+
+# Make changes
+
+pytest
+
+git add .
+git commit -m "Add my feature"
+
+git push origin feature/my-feature
+```
+
+Then open a pull request on GitHub.
 
 ---
 
-# 🧭 Long-Term Vision
+# 🔐 Security
 
-The long-term goal of BizX is to provide a coherent Python ecosystem covering the complete lifecycle of modern Data and AI systems:
+Please do not report security vulnerabilities through public GitHub issues.
 
-```text
-                 DATA
-                   │
-                   ▼
-              Preparation
-                   │
-                   ▼
-              Engineering
-                   │
-                   ▼
-              AI / ML / LLM
-                   │
-                   ▼
-              Evaluation
-                   │
-                   ▼
-                 MLOps
-                   │
-                   ▼
-               Deployment
-                   │
-                   ▼
-              Observability
-                   │
-                   ▼
-             Production AI
-```
+Security reporting procedures will be documented as the project matures.
 
-Rather than creating isolated utilities, BizX aims to provide reusable building blocks that can be composed into complete production systems.
+---
+
+# 📈 Project Status
+
+**Current Status: Alpha**
+
+BizX is under active development.
+
+The package structure and public APIs may change before the `1.0.0` release.
+
+The current priority is establishing a strong architectural foundation before expanding the number of production-ready components.
 
 ---
 
@@ -642,7 +893,7 @@ Rather than creating isolated utilities, BizX aims to provide reusable building 
 
 **Saman Siadati**
 
-BizX is an open-source project focused on building practical infrastructure and tools for modern Data and AI engineering.
+BizX is an open-source project focused on building practical, reusable infrastructure for modern Data and AI engineering.
 
 ---
 
@@ -654,17 +905,26 @@ See [LICENSE](LICENSE) for the complete license text.
 
 ---
 
-## ⭐ Support the Project
+# ⭐ Support the Project
 
 If you find BizX useful:
 
-* ⭐ Star the repository
+* ⭐ Star the GitHub repository
 * 🐛 Report bugs
 * 💡 Suggest improvements
 * 📖 Improve documentation
 * 🔧 Submit pull requests
+* 💬 Discuss architectural ideas
 * 📢 Share the project
 
 ---
 
-**BizX — One ecosystem for Data, AI, and Cloud Engineering.**
+# 🔗 Links
+
+* **GitHub:** https://github.com/samansiadati/bizx
+* **PyPI:** https://pypi.org/project/bizx/
+* **Issues:** https://github.com/samansiadati/bizx/issues
+
+---
+
+> **BizX — one ecosystem for Data and AI Engineering.**

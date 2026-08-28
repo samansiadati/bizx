@@ -1,6 +1,6 @@
 import pandas as pd
 
-from bizx.data import DataProfiler
+from bizx.de.profiling import DataProfiler
 
 
 def test_data_profiler():

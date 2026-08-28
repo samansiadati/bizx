@@ -5,52 +5,71 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bizx"
 version = "0.1.0"
-description = "A unified Python ecosystem for Data Engineering, AI, ML, GenAI, MLOps, and cloud-native analytics."
+description = "An open-source Data & AI engineering ecosystem for building modern, production-oriented applications."
 readme = "README.md"
 requires-python = ">=3.10"
 
-license = { file = "LICENSE" }
+license = "MIT"
 
 authors = [
     { name = "Saman Siadati" }
 ]
 
 keywords = [
-    "data",
+    "bizx",
     "data-engineering",
-    "ai",
+    "data",
+    "etl",
+    "data-processing",
+    "data-quality",
+    "data-profiling",
+    "pandas",
+    "spark",
+    "pyspark",
+    "sql",
     "artificial-intelligence",
+    "ai",
     "machine-learning",
+    "deep-learning",
     "generative-ai",
     "genai",
     "llm",
+    "rag",
+    "ai-agents",
     "mlops",
+    "observability",
     "cloud",
     "aws",
-    "spark",
-    "databricks"
+    "azure",
+    "gcp"
 ]
 
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Operating System :: OS Independent"
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis"
 ]
 
 dependencies = []
 
 [project.optional-dependencies]
 
-data = [
+de = [
     "numpy>=1.26",
     "pandas>=2.0"
+]
+
+spark = [
+    "pyspark>=3.5"
 ]
 
 ai = [
@@ -58,17 +77,13 @@ ai = [
     "scikit-learn>=1.4"
 ]
 
-llm = [
+genai = [
     "transformers>=4.40",
     "huggingface-hub>=0.20"
 ]
 
 aws = [
     "boto3>=1.34"
-]
-
-spark = [
-    "pyspark>=3.5"
 ]
 
 dev = [
@@ -83,11 +98,11 @@ dev = [
 all = [
     "numpy>=1.26",
     "pandas>=2.0",
+    "pyspark>=3.5",
     "scikit-learn>=1.4",
     "transformers>=4.40",
     "huggingface-hub>=0.20",
-    "boto3>=1.34",
-    "pyspark>=3.5"
+    "boto3>=1.34"
 ]
 
 [project.urls]

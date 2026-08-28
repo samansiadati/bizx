@@ -1,5 +1,8 @@
 """
-BizX: A unified Python ecosystem for Data and AI.
+BizX — Data & AI Engineering Ecosystem.
+
+BizX provides a unified ecosystem for Data Engineering,
+Artificial Intelligence, and cloud-native applications.
 """
 
 from importlib.metadata import version
