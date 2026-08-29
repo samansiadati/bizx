@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bizx"
-version = "0.1.7"
+version = "0.1.8"
 description = "An open-source Data & AI engineering ecosystem for building modern, production-oriented applications."
 readme = "README.md"
 requires-python = ">=3.10"
 
-license = "MIT"
+license = { file = "LICENSE" }
 
 authors = [
-    { name = "Saman Siadati" }
+    { name = "Saman Siadati", email = "ssiadati@aibizx.com" }
 ]
 
 keywords = [
@@ -109,6 +109,7 @@ all = [
 Homepage = "https://github.com/samansiadati/bizx"
 Repository = "https://github.com/samansiadati/bizx"
 Issues = "https://github.com/samansiadati/bizx/issues"
+Documentation = "https://github.com/samansiadati/bizx#readme"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
