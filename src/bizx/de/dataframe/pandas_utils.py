@@ -1,7 +1,6 @@
 import io
 import os
 from typing import Optional
-
 import pandas as pd
 from pandas.io.common import file_path_to_url
 
@@ -109,7 +108,6 @@ def pandas_save_csv(
         encoding=encoding,
         **kwargs,
     )
-
 
 
 def remove_quotes(

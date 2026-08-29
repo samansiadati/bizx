@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bizx"
-version = "0.1.4"
+version = "0.1.6"
 description = "An open-source Data & AI engineering ecosystem for building modern, production-oriented applications."
 readme = "README.md"
 requires-python = ">=3.10"
